@@ -141,21 +141,43 @@
   </section>
 
  
-<section id="blog" class="bg-light py-5">
-  <div class="container">
-    <h2>Blog</h2>
-    <p>Explore my technical articles and insights below.</p>
-    <div class="card p-4">
-      <h5 class="mb-3">View Articles</h5>
-      <select id="articleSelect" class="form-select mb-3">
-        <option value="https://drive.google.com/file/d/1lgJIPMM8knp0xuC_GgzPLw0qzzSWx9dc/view?usp=sharing">Deep reinforcement learning report-Neha</option>
-        <option value="assets/Network.pdf">Intelligent Routing for Smart City WSNs Using Deep Q-Networks</option>
-      </select>
-      <button class="btn btn-primary" onclick="openArticle()">Open Article</button>
+  <section id="blog" class="bg-light py-5">
+    <div class="container">
+      <h2>Blog</h2>
+      <p>Explore my technical articles and insights below.</p>
+      <div class="card p-4">
+        <h5 class="mb-3">View Articles</h5>
+        <select id="articleSelect" class="form-select mb-3">
+          <option value="assets/article1.pdf">Understanding Deep Learning</option>
+          <option value="assets/article2.pdf">AI in Smart Cities</option>
+        </select>
+        <button class="btn btn-primary" id="viewArticleBtn">Open Article</button>
+      </div>
     </div>
-  </div>
-</section>
   </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const viewBtn = document.getElementById("viewArticleBtn");
+      const articleSelect = document.getElementById("articleSelect");
+
+      viewBtn.addEventListener("click", function () {
+        const selectedPDF = articleSelect.value;
+        if (selectedPDF) {
+          // Confirm if file exists
+          fetch(selectedPDF).then(res => {
+            if (res.ok) {
+              window.open(selectedPDF, '_blank');
+            } else {
+              alert("The selected PDF was not found. Please make sure the file exists in the 'assets' folder.");
+            }
+          }).catch(err => {
+            alert("Error accessing PDF: " + err);
+          });
+        }
+      });
+    });
+  </script>
 
   <!-- Testimonials -->
   <section id="testimonials" class="container py-5">
