@@ -10,7 +10,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   document.getElementById('formResponse').innerHTML = `<div class="alert alert-success">Thanks, ${name}! Message sent.</div>`;
   this.reset();
 });
-<script>
+
   document.addEventListener("DOMContentLoaded", function () {
     const viewBtn = document.getElementById("viewArticleBtn");
     const articleSelect = document.getElementById("articleSelect");
@@ -19,7 +19,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
       const selectedPDF = articleSelect.value;
       if (selectedPDF) {
         window.open(selectedPDF, '_blank');
-      }
-    });
-  });
-</script>
+s}
+});
+});
+
