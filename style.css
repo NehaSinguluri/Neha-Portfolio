@@ -1,0 +1,11 @@
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: white;
+}
+.hero {
+  background: linear-gradient(135deg, #6c63ff, #5d9cec);
+  color: white;
+}
+.progress-bar {
+  background-color: #6c63ff;
+}
